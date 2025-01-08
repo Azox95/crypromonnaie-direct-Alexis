@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau des Prix des Crypto-monnaies</title>
+    <link rel="stylesheet" href="style.css"> <!-- Lien vers le fichier CSS externe -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Inclusion de Chart.js -->
+</head>
+<body>
+    <div class="container">
+        <h1>Prix des Crypto-monnaies en Temps Réel</h1>
+        
+        <div class="filters">
+            <label for="filter">Filtrer par :</label>
+            <select id="filter">
+                <option value="market_cap_desc">Capitalisation Boursière (Décroissante)</option>
+                <option value="market_cap_asc">Capitalisation Boursière (Croissante)</option>
+                <option value="volume_desc">Volume d'Échange (Décroissant)</option>
+                <option value="volume_asc">Volume d'Échange (Croissant)</option>
+            </select>
+        </div>
+
+        <table id="cryptoTable">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Symbole</th>
+                    <th>Prix</th>
+                    <th>Capitalisation</th>
+                    <th>Volume 24h</th>
+                </tr>
+            </thead>
+            <tbody id="cryptoData">
+                <!-- Les données seront insérées ici dynamiquement -->
+            </tbody>
+        </table>
+
+        <!-- Canvas pour afficher le premier graphique -->
+        <div class="chart-container">
+            <canvas id="priceChart" width="400" height="200"></canvas>
+        </div>
+
+        <!-- Canvas pour afficher le second graphique (en vert/rouge) -->
+        <div class="chart-container">
+            <canvas id="liveChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+    <!-- Footer avec copyright -->
+    <footer>
+        <p>&copy; 2025 Alexis Roger. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
